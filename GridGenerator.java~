@@ -1,0 +1,22 @@
+class GridGenerator{
+  class Connection{
+    public int p , q;
+  }
+  public static int get_connections_count(int n){
+    return (4*(n-2)*(n-2))+(2*((4*(n-2)+4)));
+  }
+  public Connection[] generate() {
+    public connection[] connections = new Connection[n];
+    for (int  i =0 ; i < n ; i++) {
+      connections[i]= new Connection();
+      for(int j=0;j<n;j++) {
+        
+      }
+    }
+  }
+  public static void main(String[] args) {
+    for(int i = 1; i < 10; i++){
+      System.out.println(get_connections_count(i));
+    }
+  }
+}

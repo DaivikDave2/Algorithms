@@ -1,0 +1,43 @@
+public class Transaction  {
+	 long transaction_value;
+	String name;
+	Transaction(){
+		transaction_value=0;
+		name="";
+	}
+	Transaction(String transaction){
+		String split_transaction[]=transaction.split(" ");
+		int day,month,year,hour,minute,seconds;
+		try{
+		if(split_transaction.length!=3){ throw new invalidTransaction();}
+		name=split_transaction[0];
+		String date=split_transaction[1];
+		String time=split_transaction[2];
+		String split_date[]=date.split("/");
+		String split_time[]=time.split(":");
+		day=Integer.parseInt(split_date[0]);
+		month=Integer.parseInt(split_date[1]);
+		year=Integer.parseInt(split_date[2]);
+		hour=Integer.parseInt(split_time[0]);
+		minute=Integer.parseInt(split_time[1]);
+		seconds=Integer.parseInt(split_time[2]);
+		transaction_value=0;
+		transaction_value+=seconds;
+		transaction_value+=minute*60;
+		transaction_value+=hour*3600;
+		transaction_value+=day*86400;
+		transaction_value+=month*2678400;
+		transaction_value+=(year-2000)*32140800;
+		}
+		catch(invalidTransaction e){
+			System.out.println("the Transaction is not valid.");
+		}
+
+	}
+	public long getSeconds(){
+		return transaction_value%60;
+	}
+	public long getMinutes(){
+		return (transaction_value/60)%3600;
+	}
+}

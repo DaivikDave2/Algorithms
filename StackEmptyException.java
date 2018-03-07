@@ -1,0 +1,3 @@
+class StackEmptyException extends Exception{
+	
+}

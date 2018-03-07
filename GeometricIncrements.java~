@@ -1,0 +1,21 @@
+import java.util.Random;
+public class GeometricIncrements {
+  public static void main(String args[]) {
+    if(args.length <= 0){
+      System.out.println("Usage with args");
+      return;
+    }
+    Random r = new Random();
+    Double[] d = new Double[n];
+    int n = Integer.parseInt(args[0]);
+    for(int i = 0;i<n;i++) {
+      d[i] = r.nextDouble();
+    }
+    ShellSortArray s = new ShellSortArray();
+    for(int t = 100 ; t<=10000 ; t*=2) {
+      long starttime = System.currentTimeMillis();
+      long endtime = System.currentTimeMillis();
+      long time = endtime - starttime;
+    }
+  }
+}

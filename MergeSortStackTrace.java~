@@ -1,0 +1,20 @@
+public class MergeSortStackTrace {
+  public static void main(String args[]) {
+    trace(0,11,0);
+  }
+  public static void trace(int low,int high,int ident) {
+    if(high<=low) return;
+    for(int i=1; i<=ident;i++){
+      System.out.print(" ");
+    }
+    System.out.println("sort("+low+", "+high+" )");
+    int mid = low +((high-low)/2);
+    trace(low,mid,ident+2);
+    trace(mid+1,high,ident+2);
+    for(int i=1; i<=ident;i++){
+      System.out.print(" ");
+    }
+    System.out.println("merge("+low+", "+mid+" ,"+high+")");
+    
+  }
+}

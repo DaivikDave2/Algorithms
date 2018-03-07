@@ -1,0 +1,3 @@
+class ListEmptyException extends Exception{
+	
+}

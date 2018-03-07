@@ -1,0 +1,33 @@
+import java.util.Random;
+public class EqualKeys {
+  public static void main(String args[]) throws InterruptedException {
+    int n = 128;
+    Random r = new Random();
+    while(true) {
+      Double[] in = new Double[n];
+      Double[] sh = new Double[n];
+      Double[] se = new Double[n];
+      for(int i = 0; i<n ; i++){
+      in[i] = sh[i] = se[i] = r.nextDouble(); 
+      }
+      InsertionSort IN= new InsertionSort();
+      SelectionSort SE = new SelectionSort();
+      ShellSort SH = new ShellSort();
+      long starttime=System.currentTimeMillis();
+      SH.sort(sh,n);
+      long endtime = System.currentTimeMillis();
+      long shelltime= endtime - starttime;
+      starttime=System.currentTimeMillis();
+      IN.sort(in,n);
+      endtime = System.currentTimeMillis();
+      long insertiontime= endtime - starttime;
+      starttime=System.currentTimeMillis();
+      SE.sort(se,n);
+      endtime = System.currentTimeMillis();
+      long selectiontime= endtime - starttime;
+      System.out.println(n+" : "+((double)insertiontime/shelltime)+" "+((double)selectiontime/shelltime)+" "+((double)selectiontime/insertiontime));
+      n*=2;
+    }  
+  }
+  
+}

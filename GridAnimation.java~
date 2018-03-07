@@ -1,0 +1,12 @@
+import edu.princeton.cs.algs4.*;
+class GridAnimation{
+  public static void main(String[] args){
+    GridGenerator g= new GridGenerator();
+    if(args.length == 0){
+      System.out.println("Command line argument required");
+      return;
+    }
+    Connection c[] = g.generate(Integer.parseInt(args[0]));
+    StdDraw.point(1,1);
+  }
+}
